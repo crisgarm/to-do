@@ -1,6 +1,11 @@
 import React from "react";
 
-const Form = ({ inputText, handleInputChange, handleTask }) => {
+const Form = ({
+  inputText,
+  handleInputChange,
+  handleTask,
+  handleSelectChange,
+}) => {
   const inputChange = (ev) => {
     handleInputChange(ev.target.value);
   };
@@ -8,6 +13,10 @@ const Form = ({ inputText, handleInputChange, handleTask }) => {
   const handleSubmit = (ev) => {
     ev.preventDefault();
     handleTask();
+  };
+
+  const handleChange = (ev) => {
+    handleSelectChange(ev.target.value);
   };
 
   return (
@@ -22,7 +31,7 @@ const Form = ({ inputText, handleInputChange, handleTask }) => {
         Add
       </button>
       <div className="form__selectContainer">
-        <select className="form__select">
+        <select onChange={handleChange} className="form__select">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>

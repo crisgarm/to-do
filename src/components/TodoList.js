@@ -1,8 +1,13 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ tasks, handleDeleteTask, handleCompletedTask }) => {
-  const todoItem = tasks.map((task) => {
+const TodoList = ({
+  tasks,
+  handleDeleteTask,
+  handleCompletedTask,
+  filteredTasks,
+}) => {
+  const todoItem = filteredTasks.map((task) => {
     return (
       <li key={task.id} className="todoList__item">
         <Todo
