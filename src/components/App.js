@@ -18,6 +18,10 @@ const App = () => {
     setInputText("");
   };
 
+  const handleDeleteTask = (taskId) => {
+    setTasks(tasks.filter((item) => item.id !== taskId));
+  };
+
   return (
     <div className="App">
       <header>
@@ -29,7 +33,7 @@ const App = () => {
         tasks={tasks}
         handleTask={handleTask}
       />
-      <TodoList />
+      <TodoList tasks={tasks} handleDeleteTask={handleDeleteTask} />
     </div>
   );
 };
