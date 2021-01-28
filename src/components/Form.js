@@ -1,12 +1,13 @@
 import React from "react";
 
-const Form = (props) => {
-  const handleInputChange = (ev) => {
-    props.handleInputChange(ev.target.value);
+const Form = ({ inputText, handleInputChange, handleTask }) => {
+  const inputChange = (ev) => {
+    handleInputChange(ev.target.value);
   };
 
   const handleSubmit = (ev) => {
     ev.preventDefault();
+    handleTask();
   };
 
   return (
@@ -14,8 +15,8 @@ const Form = (props) => {
       <input
         type="text"
         className="form__input"
-        value={props.inputText}
-        onChange={handleInputChange}
+        value={inputText}
+        onChange={inputChange}
       />
       <button className="form__button" type="submit">
         Add
