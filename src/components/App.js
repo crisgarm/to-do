@@ -1,15 +1,26 @@
-import React from "react";
+import React, { useState } from "react";
 import "../stylesheets/App.css";
+import Form from "./Form";
+import TodoList from "./TodoList";
 
-class App extends React.Component {
-  // eslint-disable-next-line
-  constructor(props) {
-    super(props);
-  }
+const App = () => {
+  const [inputText, setInputText] = useState("");
+  const [tasks, setTasks] = useState([]);
 
-  render() {
-    return <div className="App">Hola Cris</div>;
-  }
-}
+  const handleInputChange = (input) => {
+    console.log(input);
+    setInputText(input);
+  };
+
+  return (
+    <div className="App">
+      <header>
+        <h1>Mi lista de tareas</h1>
+      </header>
+      <Form inputText={inputText} handleInputChange={handleInputChange} />
+      <TodoList />
+    </div>
+  );
+};
 
 export default App;
