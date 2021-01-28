@@ -22,6 +22,20 @@ const App = () => {
     setTasks(tasks.filter((item) => item.id !== taskId));
   };
 
+  const handleCompletedTask = (taskId) => {
+    setTasks(
+      tasks.map((item) => {
+        if (item.id === taskId) {
+          return {
+            ...item,
+            completed: !item.completed,
+          };
+        }
+        return item;
+      })
+    );
+  };
+
   return (
     <div className="App">
       <header>
@@ -33,7 +47,11 @@ const App = () => {
         tasks={tasks}
         handleTask={handleTask}
       />
-      <TodoList tasks={tasks} handleDeleteTask={handleDeleteTask} />
+      <TodoList
+        tasks={tasks}
+        handleDeleteTask={handleDeleteTask}
+        handleCompletedTask={handleCompletedTask}
+      />
     </div>
   );
 };

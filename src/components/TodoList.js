@@ -1,7 +1,7 @@
 import React from "react";
 import Todo from "./Todo";
 
-const TodoList = ({ tasks, handleDeleteTask }) => {
+const TodoList = ({ tasks, handleDeleteTask, handleCompletedTask }) => {
   const todoItem = tasks.map((task) => {
     return (
       <li key={task.id}>
@@ -9,6 +9,7 @@ const TodoList = ({ tasks, handleDeleteTask }) => {
           text={task.text}
           id={task.id}
           handleDeleteTask={handleDeleteTask}
+          handleCompletedTask={handleCompletedTask}
         />
       </li>
     );
