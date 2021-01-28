@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  width: 100%;
+  height: 100vh;
+  background: radial-gradient(
+    circle,
+    rgba(238, 174, 202, 1) 0%,
+    rgba(148, 187, 233, 1) 100%
+  );
+  font-family: "Poppins", sans-serif;
+}
+
+.header {
+  width: 100%;
+  padding: 20px;
+  text-align: center;
+}
+
+.main {
+  width: 100%;
+  height: 100%;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  &__input {
+    padding: 5px;
+    width: 20em;
+    margin-right: 5px;
+    border-radius: 5px;
+  }
+
+  &__button {
+    padding: 5px;
+    border-radius: 5px;
+  }
+
+  &__selectContainer {
+    margin-left: 10px;
+  }
+
+  &__select {
+    padding: 5px;
+    border-radius: 5px;
+  }
+}
+
+.todoList {
+  max-width: 435px;
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+
+  &__item {
+    width: 100%;
+    list-style: none;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding: 5px;
+    background-color: salmon;
+    border-radius: 5px;
+
+    &-btnCheck,
+    &-btnTrash {
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+
+    &-btnCheck {
+      background-color: rgb(55, 177, 55);
+      border: 3px double rgb(55, 177, 55);
+      margin-right: 5px;
+    }
+
+    &-btnTrash {
+      background-color: rgb(207, 40, 40);
+      border: 3px solid rgb(207, 40, 40);
+    }
+  }
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.5;
+}

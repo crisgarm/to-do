@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { v4 as uuidv4 } from "uuid";
-import "../stylesheets/App.css";
+import "../stylesheets/App.scss";
 import Form from "./Form";
 import TodoList from "./TodoList";
 
@@ -38,20 +38,22 @@ const App = () => {
 
   return (
     <div className="App">
-      <header>
-        <h1>Mi lista de tareas</h1>
+      <header className="header">
+        <h1 className="header__title">Things to do</h1>
       </header>
-      <Form
-        inputText={inputText}
-        handleInputChange={handleInputChange}
-        tasks={tasks}
-        handleTask={handleTask}
-      />
-      <TodoList
-        tasks={tasks}
-        handleDeleteTask={handleDeleteTask}
-        handleCompletedTask={handleCompletedTask}
-      />
+      <main>
+        <Form
+          inputText={inputText}
+          handleInputChange={handleInputChange}
+          tasks={tasks}
+          handleTask={handleTask}
+        />
+        <TodoList
+          tasks={tasks}
+          handleDeleteTask={handleDeleteTask}
+          handleCompletedTask={handleCompletedTask}
+        />
+      </main>
     </div>
   );
 };
