@@ -50,7 +50,6 @@ const App = () => {
   };
 
   const handleInputChange = (input) => {
-    console.log(input);
     setInputText(input);
   };
 
@@ -78,7 +77,6 @@ const App = () => {
   };
 
   const handleSelectChange = (select) => {
-    console.log(select);
     setTasksFilter(select);
   };
 
