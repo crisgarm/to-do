@@ -20,6 +20,10 @@
   padding: 20px;
   text-align: center;
   color: #5c8285;
+
+  @media (min-width: 768px) {
+    padding: 40px;
+  }
 }
 
 .main {
@@ -33,6 +37,10 @@
   justify-content: center;
   align-items: center;
 
+  @media (min-width: 768px) {
+    flex-direction: row;
+  }
+
   &__input {
     padding: 5px;
     width: 15em;
@@ -42,6 +50,9 @@
     background-color: transparent;
     outline: #5c8285;
     color: #5c8285;
+    @media (min-width: 768px) {
+      width: 20em;
+    }
   }
 
   &__button {
@@ -55,6 +66,11 @@
 
   &__selectContainer {
     margin-top: 10px;
+
+    @media (min-width: 768px) {
+      margin-top: 0px;
+      margin-left: 20px;
+    }
   }
 
   &__select {
@@ -74,6 +90,10 @@
   justify-content: center;
   align-items: center;
   margin: auto;
+
+  @media (min-width: 768px) {
+    width: 370px;
+  }
 
   &__item {
     width: 100%;

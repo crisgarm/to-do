@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { v4 as uuidv4 } from "uuid";
 import "../stylesheets/App.scss";
 import Form from "./Form";
@@ -11,6 +11,8 @@ const App = () => {
   const [tasksFilter, setTasksFilter] = useState("all");
   const [filteredTasks, setFilteredTasks] = useState([]);
 
+  const inputRef = useRef(null);
+
   //USE EFFECT
   useEffect(() => {
     getFromLocalStorage();
@@ -19,6 +21,7 @@ const App = () => {
   useEffect(() => {
     handlerFilteredTasks();
     setLocalStorage();
+    inputRef.current.focus();
   }, [tasks, tasksFilter]);
 
   //LOCAL STORAGE
@@ -92,6 +95,7 @@ const App = () => {
           tasks={tasks}
           handleTask={handleTask}
           handleSelectChange={handleSelectChange}
+          inputRef={inputRef}
         />
         <TodoList
           tasks={tasks}

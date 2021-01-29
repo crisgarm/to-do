@@ -5,6 +5,7 @@ const Form = ({
   handleInputChange,
   handleTask,
   handleSelectChange,
+  inputRef,
 }) => {
   const inputChange = (ev) => {
     handleInputChange(ev.target.value);
@@ -28,8 +29,13 @@ const Form = ({
           placeholder="Enter a new task!"
           value={inputText}
           onChange={inputChange}
+          ref={inputRef}
         />
-        <button className="form__button" type="submit">
+        <button
+          className="form__button"
+          disabled={inputText === "" ? true : false}
+          type="submit"
+        >
           Add
         </button>
       </div>
