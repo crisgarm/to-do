@@ -83,7 +83,7 @@ const App = () => {
   return (
     <div className="App">
       <header className="header">
-        <h1 className="header__title">Things to do</h1>
+        <h1 className="header__title">What's the plan for today?</h1>
       </header>
       <main>
         <Form

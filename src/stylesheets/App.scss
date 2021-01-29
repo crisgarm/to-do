@@ -7,10 +7,10 @@
 .App {
   width: 100%;
   height: 100vh;
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(148, 187, 233, 1) 100%
+  background-image: linear-gradient(
+    359deg,
+    rgba(150, 192, 255, 1) -17.7%,
+    rgba(255, 180, 161, 1) 101.5%
   );
   font-family: "Poppins", sans-serif;
 }
@@ -19,6 +19,7 @@
   width: 100%;
   padding: 20px;
   text-align: center;
+  color: #5c8285;
 }
 
 .main {
@@ -28,35 +29,46 @@
 
 .form {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 
   &__input {
     padding: 5px;
-    width: 20em;
+    width: 15em;
     margin-right: 5px;
-    border-radius: 5px;
+    border: none;
+    border-bottom: 2px solid #5c8285;
+    background-color: transparent;
+    outline: #5c8285;
+    color: #5c8285;
   }
 
   &__button {
     padding: 5px;
     border-radius: 5px;
+    background-color: #5c8285;
+    border: 2px solid #5c8285;
+    color: rgb(224, 220, 197);
+    outline-color: rgb(224, 220, 197);
   }
 
   &__selectContainer {
-    margin-left: 10px;
+    margin-top: 10px;
   }
 
   &__select {
     padding: 5px;
     border-radius: 5px;
+    background-color: #5c8285;
+    color: rgb(224, 220, 197);
+    outline-color: rgb(224, 220, 197);
   }
 }
 
 .todoList {
-  max-width: 435px;
-  padding-top: 30px;
+  width: 270px;
+  padding-top: 70px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -72,8 +84,11 @@
     align-items: center;
     margin-bottom: 20px;
     padding: 5px;
-    background-color: salmon;
+    background-color: rgba(245, 232, 177, 0.815);
+    border: 2px #5c8285 dotted;
+    color: #5c8285;
     border-radius: 5px;
+    font-size: 12px;
 
     &-btnCheck,
     &-btnTrash {
@@ -81,17 +96,18 @@
       height: 30px;
       cursor: pointer;
       border-radius: 5px;
+      color: rgb(90, 101, 102);
     }
 
     &-btnCheck {
-      background-color: rgb(55, 177, 55);
-      border: 3px double rgb(55, 177, 55);
+      background-color: rgb(126, 218, 126);
+      border: 3px double rgb(126, 218, 126);
       margin-right: 5px;
     }
 
     &-btnTrash {
-      background-color: rgb(207, 40, 40);
-      border: 3px solid rgb(207, 40, 40);
+      background-color: #7fa7aa;
+      border: 3px solid #7fa7aa;
     }
   }
 }
@@ -99,4 +115,5 @@
 .completed {
   text-decoration: line-through;
   opacity: 0.5;
+  color: rgb(218, 64, 64);
 }

@@ -21,15 +21,18 @@ const Form = ({
 
   return (
     <form className="form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="form__input"
-        value={inputText}
-        onChange={inputChange}
-      />
-      <button className="form__button" type="submit">
-        Add
-      </button>
+      <div>
+        <input
+          type="text"
+          className="form__input"
+          placeholder="Enter a new task!"
+          value={inputText}
+          onChange={inputChange}
+        />
+        <button className="form__button" type="submit">
+          Add
+        </button>
+      </div>
       <div className="form__selectContainer">
         <select onChange={handleChange} className="form__select">
           <option value="all">All</option>
